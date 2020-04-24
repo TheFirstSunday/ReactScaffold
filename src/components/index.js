@@ -1,9 +1,4 @@
-
 import PageLoading from "./Loading/PageLoading";
-import NotFound from './Notfound/NotFound';
+import NotFound from "./Notfound/NotFound";
 
-export {
-    NotFound,
-  
-  PageLoading,
-};
+export { NotFound, PageLoading };

@@ -2,13 +2,13 @@ import React, { Fragment } from "react";
 
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
-import App from "../view/App";
+import App from "../view/Index";
 import Loadable from "react-loadable";
-import { PageLoading, Nofound } from "components";
+import { PageLoading, Notfound } from "components";
 import routers from "./routers";
 const history = createHistory();
 const Nofound = Loadable({
-  loader: () => import("view/exceptionPage/Nofound"),
+  loader: () => import(Notfound),
   loading: PageLoading
 });
 
