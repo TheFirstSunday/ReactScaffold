@@ -1,21 +1,14 @@
 import React from "react";
 import "./style.less";
-import new_404 from "assets/images/img/new404.png";
+import new_404 from "@/assets/images/imgs/new404.png";
 
-export default class Nofound extends React.Component {
-  static propTypes = {};
-
-  constructor(props) {
-    super(props);
-    
-  }
+export default class NotFound extends React.Component {
 
   render() {
     return (
       <div className="not-found">
-            <img src={new_404} />
+            <img src={new_404}  alt='not found!'/>
       </div>
-                              
     );
   }
 }

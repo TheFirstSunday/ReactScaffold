@@ -1,13 +1,9 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
-import "./style";
+import "./style.less";
 
 export default class PageLoading extends React.PureComponent {
-  static propTypes = {};
 
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <ContentLoader>

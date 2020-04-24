@@ -1,11 +1,11 @@
-import { DEBUG } from "config/env";
+import { DEBUG } from "@/config/env";
 
 const isChrome = () => {
   if (typeof window === "undefined") {
     return false;
   }
   const ua = window.navigator.userAgent.toLowerCase();
-  return ua.match(/chrome\/([\d\.]+)/);
+  return ua.match(/chrome\/([\d]+)/);
 };
 
 const log = (...opt) => {

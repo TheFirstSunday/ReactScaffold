@@ -1,7 +1,7 @@
 import { init } from "@rematch/core";
 import logger from "redux-logger";
 import models from "../models";
-import { DEBUG } from "util/env";
+import { DEBUG } from "@/utils/env";
 const middlewares = [];
 if (DEBUG) {
   // 日志插件
