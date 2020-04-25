@@ -1,50 +1,53 @@
-import React, { Fragment, Component } from "react";
+import React, { Fragment,Component } from "react";
 
 import { Router, Route, Switch, Redirect } from "react-router-dom";
-import createHistory from "history/createBrowserHistory";
+import {createBrowserHistory} from "history";
 import App from "@/view/Index";
 import Loadable from "react-loadable";
 import { PageLoading, NotFound } from "@/components";
 
 import routers from "./routers";
-const history = createHistory();
+const history = createBrowserHistory();
+
 
 const Nofound = Loadable({
   loader: () => import(NotFound),
-  loading: PageLoading,
+  loading: PageLoading
 });
 
 export default class RouterView extends Component {
+
   onEnter(Component, props) {
     const LoadComponent = Loadable({
       loader: Component,
-      loading: PageLoading,
+      loading: PageLoading
     });
     return <LoadComponent {...props} />;
   }
-
+ 
   render() {
+    console.log(routers)
     return (
       <Fragment>
         <Router history={history}>
           <Route
-            render={(renderProps) => {
+            render={renderProps => {
               return (
-                <App renderProps={renderProps}>
-                  <Switch>
-                    <Redirect exact from="/" to="/fuse/home" />
-                    {routers.map((route) => (
-                      <Route
-                        path={route.path}
-                        key={route.path}
-                        render={(props) =>
-                          this.onEnter(route.components, props, renderProps)
-                        }
-                      />
-                    ))}
-                    <Route component={Nofound} />
-                  </Switch>
-                </App>
+                  <App renderProps={renderProps}>
+                    <Switch>
+                      <Redirect exact from="/" to="/home" />
+                      {routers.map(route => (
+                        <Route
+                          path={route.path}
+                          key={route.path}
+                          render={props =>
+                            this.onEnter(route.components, props, renderProps)
+                          }
+                        />
+                      ))}
+                      <Route component={Nofound} />
+                    </Switch>
+                  </App>
               );
             }}
           />

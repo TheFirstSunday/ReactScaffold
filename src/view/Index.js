@@ -1,12 +1,17 @@
-import React, {Component, Fragment} from "react";
-
-export default class Index extends Component {
+import React, {PureComponent, Fragment} from "react";
+import {Sider} from '@/components'
+export default class App extends React.PureComponent {
+  constructor(props) {
+    super(props);
+  }
 
   render() {
+    const { children, renderProps  } = this.props;
+ 
     return (
-      <Fragment>
-        Index
-      </Fragment>
+        <Fragment>
+          <Sider></Sider> 
+        </Fragment>
     );
   }
 }
